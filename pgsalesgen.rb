@@ -8,13 +8,19 @@ class Pgsalesgen < Formula
   license "MIT"
 
   depends_on "python@3.14"
+  depends_on "libpq"
 
   def install
-    virtualenv_install_with_resources
-    system libexec/"bin/python", "-m", "pip", "install", "numpy", "psycopg[binary]"
+    venv = virtualenv_create(libexec, "python3.14")
+
+    ENV["PG_CONFIG"] = Formula["libpq"].opt_bin/"pg_config"
+
+    venv.pip_install_and_link buildpath
+
+    venv.pip_install "psycopg[c]"
   end
 
   test do
-    system "#{bin}/pgsalesgen", "--help"
+    system "#{bin}/pg-salesgen", "--help"
   end
 end
