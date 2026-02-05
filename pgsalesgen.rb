@@ -1,4 +1,4 @@
-class PgSalesGen < Formula
+class Pgsalesgen < Formula
   include Language::Python::Virtualenv
 
   desc "PostgreSQL Sales Generator"
