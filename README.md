@@ -112,6 +112,9 @@ options:
 
 ## Release Notes
 
+### 0.1.1 Release
+- Fix formula, pyproject.toml, and so on
+
 ### 0.1.0 Release
 - Initial release
 
