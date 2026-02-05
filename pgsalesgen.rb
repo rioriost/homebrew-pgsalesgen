@@ -21,6 +21,6 @@ class Pgsalesgen < Formula
   end
 
   test do
-    system "#{bin}/pg-salesgen", "--help"
+    system "#{bin}/pgsalesgen", "--help"
   end
 end
